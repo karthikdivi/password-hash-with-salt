@@ -1,5 +1,5 @@
 {
-  "name": "salt-hash-password",
+  "name": "password-hash-with-salt",
   "version": "1.0.0",
   "keywords": [
     "salt", "hash", "password"
@@ -9,7 +9,7 @@
   "author": "Karthik Divi",
   "repository": {
     "type": "git",
-    "url": "https://github.com/karthikdivi/salt-hash-password.git"
+    "url": "https://github.com/karthikdivi/password-hash-with-salt.git"
   },
   "main": "index.js",
   "devDependencies": {
