@@ -1,0 +1,21 @@
+{
+  "name": "salt-hash-password",
+  "version": "1.0.0",
+  "keywords": [
+    "salt", "hash", "password"
+  ],
+  "description": "NodeJS library for hash the passwords with salt",
+  "license": "MIT",
+  "author": "Karthik Divi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karthikdivi/salt-hash-password.git"
+  },
+  "main": "index.js",
+  "devDependencies": {
+    "tap": "^18.5.0"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  }
+}
