@@ -16,6 +16,7 @@
     "tap": "^18.5.0"
   },
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "tap test/*.js",
+    "build": ""
   }
 }
