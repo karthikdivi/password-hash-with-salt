@@ -1,15 +1,21 @@
 # password-hash-with-salt
 NodeJS library for hash the passwords with salt
 
+## Installation
+
+```sh
+npm i password-hash-with-salt
+```
+
 ## Usage 
 
-### Generate a salt and hash a password
+### Generate salt and hash from password
 
 ```javascript
 const phws = require('password-hash-with-salt');
 
 let password = '123456'; // password from user input
-let result = phws.generate(password);
+let result = await phws.generate(password);
 
 console.log(result.salt); // store the salt to database
 consle.log(result.hash); // store the hash as password in database
@@ -21,9 +27,10 @@ consle.log(result.hash); // store the hash as password in database
 const phws = require('password-hash-with-salt');
 
 let password = '123456'; // password from user input
-let salt = 'salt from database';
+let salt = 'read salt from database';
+let hash = 'read hash from database';
 
-let result = phws.verify(password, salt); // returns true or false
+let result = await phws.verify(password, hash, salt); // returns true or false
 if (result) {
     // password is correct
 } else {
