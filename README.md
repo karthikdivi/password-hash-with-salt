@@ -40,7 +40,7 @@ if (result) {
 
 ## Modes
 
-The default mode is `secure`. You can change the mode by passing the mode as a last parameter to the `generate` and `verify` functions.
+The default mode is `fast`. You can change the mode by passing the mode as a last parameter to the `generate` and `verify` functions.
 
 | Mode | Description |
 | ---- | ----------- |

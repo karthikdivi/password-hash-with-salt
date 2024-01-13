@@ -1,6 +1,6 @@
 var crypto = require('crypto');
 
-function createSalt(mode = 'secure') {
+function createSalt(mode = 'fast') {
   // fastest = 32, fast = 64, secure = 256
   let size = 256;
   if (mode === 'fast') {
@@ -11,7 +11,7 @@ function createSalt(mode = 'secure') {
   return crypto.randomBytes(size).toString('base64');
 }
 
-async function createHash(password, salt, mode = 'secure') {
+async function createHash(password, salt, mode = 'fast') {
   let iterations = 10000;
   let keylen = 64;
   let digest = 'sha512';
@@ -32,7 +32,7 @@ async function createHash(password, salt, mode = 'secure') {
   return promise;
 }
 
-exports.generate = async function (password, mode = 'secure') {
+exports.generate = async function (password, mode = 'fast') {
   let start = Date.now();
   let salt = createSalt(mode);
   let hash = await createHash(password, salt, mode);
@@ -44,7 +44,7 @@ exports.generate = async function (password, mode = 'secure') {
   };
 }
 
-exports.verify = async function (password, hash, salt, mode = 'secure') {
+exports.verify = async function (password, hash, salt, mode = 'fast') {
   let hash2 = await createHash(password, salt, mode);
   return hash2 === hash;
 }
